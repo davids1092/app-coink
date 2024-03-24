@@ -63,13 +63,13 @@
 
         </div>
 
-        <ion-input formControlName="correo" type="email" [errorText]="getErrorMessage(form.controls['correo'])"  fill="solid"
+        <ion-input formControlName="correo" type="email" (ngModelChange)="validarCorreos(form.controls['correo'])"  [errorText]="getErrorMessage(form.controls['correo'])"  fill="solid"
         label="Correo electrónico" labelPlacement="floating" placeholder="xxxxx@xxxx.com"></ion-input>
 
       <ion-input formControlName="correo2" type="email" (ngModelChange)="validarCorreos(form.controls['correo2'])" [errorText]="getErrorMessage(form.controls['correo2'])" fill="solid"
       label="Confirmar correo electrónico" labelPlacement="floating" placeholder="xxxxx@xxxx.com"></ion-input>
 
-      <ion-input formControlName="pin1" #pinInput helperText="Ingresa un valor numerico" type="password" maxlength="4" [errorText]="getErrorMessage(form.controls['pin1'])" fill="solid"
+      <ion-input formControlName="pin1" inputmode="numeric" #pinInput helperText="Ingresa un valor numerico" type="password" maxlength="4" (ngModelChange)="validarPin(form.controls['pin1'])"[errorText]="getErrorMessage(form.controls['pin1'])" fill="solid"
       label="PIN de seguridad" labelPlacement="floating" placeholder="****">
       <ion-button fill="clear" (click)="ver(pinInput)" slot="end" aria-label="Show/hide">
         <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>

@@ -126,16 +126,24 @@ async errorAlert() {
   }
   validarCorreos(control: any) {
     // console.log('valdiando coreos', this.form.controls['correo'].value, this.form.controls['correo2'].value)
-    if (
-      this.form.controls['correo'].value != this.form.controls['correo2'].value
-    ) {
-      control.setErrors({ valido: true });
+    if (this.form.controls['correo'].value != this.form.controls['correo2'].value) {
+     
+      this.form.controls['correo'].setErrors({ valido: true })
+      this.form.controls['correo2'].setErrors({ valido: true })
+    }else{
+      this.form.controls['correo'].setErrors(null)
+      this.form.controls['correo2'].setErrors(null)
     }
   }
   validarPin(control: any) {
-    // console.log('valdiando coreos', this.form.controls['correo'].value, this.form.controls['correo2'].value)
+    // console.log('valdiando coreos', this.form.controls['pin1'].value, this.form.controls['pin2'].value)
     if (this.form.controls['pin1'].value != this.form.controls['pin2'].value) {
-      control.setErrors({ pin: true });
+     
+      this.form.controls['pin1'].setErrors({ pin: true })
+      this.form.controls['pin2'].setErrors({ pin: true })
+    }else{
+      this.form.controls['pin1'].setErrors(null)
+      this.form.controls['pin2'].setErrors(null)
     }
   }
   getErrorMessageDate(fieldFormGroup: any) {
