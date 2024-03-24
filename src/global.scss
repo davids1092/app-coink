@@ -60,7 +60,7 @@
     src: url(assets/fonts/Montserrat-Bold.ttf) format("opentype");
 }
 
-html, body, ion-app, ion-content,ion-card, ion-header, ion-footer,ion-select , ion-button,h1,h2,h3,h4,p,button,div {
+* {
     font-family: Montserrat, sans-serif;
 }
 
