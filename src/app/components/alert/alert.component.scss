@@ -1,0 +1,25 @@
+.container-alert{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(162, 162, 162);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px 10px;
+    padding-top: 70px;
+}
+.botonera{
+    width: 80%;
+    .btn{
+      margin-bottom: 20px ;
+    }
+  }

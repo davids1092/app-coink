@@ -1,0 +1,56 @@
+
+
+
+.steps {
+    /* width: calc(100% / 2); */
+    width: 75%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .steps .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: 500;
+    background: white;
+    z-index: 2;
+    border: 2px solid #00000012;
+    transition: all 600ms ease;
+    transition-delay: 10ms;
+    box-shadow: 0px 3px 6px #00000012;
+  }
+  
+  .steps .circle mat-icon {
+    color: white;
+  }
+  
+  .steps .active {
+    background: var(--primaryColor);
+    border: 3px solid #ffff;
+  }
+  
+  .steps .progress {
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background-color: #00000012;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 3px 6px #00000012;
+  }
+  
+  .progress .indicator {
+    position: absolute;
+    height: 50%;
+    background: var(--primaryColor);
+    transition: all 500ms ease;
+  }

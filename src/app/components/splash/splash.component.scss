@@ -1,0 +1,11 @@
+.comtainer-splash{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--ion-color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.comtainer-splash img{
+    width: 50%;
+}

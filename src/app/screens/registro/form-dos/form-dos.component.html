@@ -1,0 +1,99 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <div class="tittle">
+        <ion-label class="ion-label" color="secondary">DATOS DE CUENTA</ion-label>
+        <img [src]="stepper" alt="" />
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="containerScreen" *ngIf="!loading">
+    <div class="oink">
+      <img [src]="oink" alt="" />
+      <div class="description">
+        <ion-label class="ion-label" color="secondary">¿CUÁLES SON TUS DATOS?</ion-label>
+        <ion-label>Ahora necesitamos saber algunos datos tuyos</ion-label>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <form [formGroup]="form">
+      <div class="label">
+        <ion-label class="ion-label" color="secondary">Documento de identidad</ion-label>
+
+      </div>
+   
+        <ion-select  formControlName="tipo" fill="solid" label="Tipo documento" labelPlacement="floating"
+          interface="popover" placeholder="Selecciona una opción">
+          <ion-select-option *ngFor="let i of typeDocument" [value]="i.id">{{
+            i.description
+            }}</ion-select-option>
+        </ion-select>
+        <ion-text *ngIf="form.controls['tipo'].invalid && (form.controls['tipo'].dirty || form.controls['tipo'].touched)" color="danger">
+          <p class="error-message">{{getErrorMessage(form.controls['tipo'])}}</p>
+        </ion-text>
+
+
+      <ion-input formControlName="documento" [errorText]="getErrorMessage(form.controls['documento'])" fill="solid"
+        label="Número de documento" labelPlacement="floating" placeholder="Selecciona una opción"></ion-input>
+
+      <ion-input formControlName="fechaEx" fill="solid" [errorText]="getErrorMessageDate(form.controls['fechaEx'])" 
+        label="Fecha de expedición del documento" labelPlacement="floating" placeholder="dd/mm/yyyy"></ion-input>
+
+      <ion-input formControlName="fechaNac" [errorText]="getErrorMessageDate(form.controls['fechaNac'])" fill="solid"
+        label="Fecha de nacimiento" labelPlacement="floating" placeholder="dd/mm/yyyy"></ion-input>
+
+      
+        <ion-select  formControlName="genero" fill="solid" label="Genero" labelPlacement="floating" interface="popover"
+          placeholder="Selecciona una opción">
+          <ion-select-option *ngFor="let i of gender" [value]="i.key">{{
+            i.value
+            }}</ion-select-option>
+        </ion-select>
+        <ion-text *ngIf="form.controls['genero'].invalid && (form.controls['genero'].dirty || form.controls['genero'].touched)" color="danger">
+          <p class="error-message">{{getErrorMessage(form.controls['genero'])}}</p>
+        </ion-text>
+        <div class="label">
+          <ion-label class="ion-label" color="secondary">Configura tu cuenta</ion-label>
+
+        </div>
+
+        <ion-input formControlName="correo" type="email" [errorText]="getErrorMessage(form.controls['correo'])"  fill="solid"
+        label="Correo electrónico" labelPlacement="floating" placeholder="xxxxx@xxxx.com"></ion-input>
+
+      <ion-input formControlName="correo2" type="email" (ngModelChange)="validarCorreos(form.controls['correo2'])" [errorText]="getErrorMessage(form.controls['correo2'])" fill="solid"
+      label="Confirmar correo electrónico" labelPlacement="floating" placeholder="xxxxx@xxxx.com"></ion-input>
+
+      <ion-input formControlName="pin1" #pinInput helperText="Ingresa un valor numerico" type="password" maxlength="4" [errorText]="getErrorMessage(form.controls['pin1'])" fill="solid"
+      label="PIN de seguridad" labelPlacement="floating" placeholder="****">
+      <ion-button fill="clear" (click)="ver(pinInput)" slot="end" aria-label="Show/hide">
+        <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+      </ion-button>
+</ion-input>
+
+
+      <ion-input formControlName="pin2" #pinInput2 helperText="Ingresa un valor numerico" inputmode="numeric" maxlength="4" type="password" (ngModelChange)="validarPin(form.controls['pin2'])" [errorText]="getErrorMessage(form.controls['pin2'])" fill="solid"
+      label="Confirmar PIN de seguridad" labelPlacement="floating" placeholder="****">
+      <ion-button fill="clear" (click)="ver(pinInput2)" slot="end" aria-label="Show/hide">
+        <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+      </ion-button>
+    </ion-input>
+
+      <div class="botonera">
+        <div class="btn">
+          <app-btn-pricnipal [disabled]="form.invalid" (click)="nextStep()">Siguiente</app-btn-pricnipal>
+
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="spinner" *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+ 
+</ion-content>

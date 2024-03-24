@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <div class="tittle">
+        <ion-label color="secondary">NÚMERO CELULAR</ion-label>
+        <img [src]="stepper" alt="">
+      </div>
+   
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+ 
+  <div class="containerScreen">
+    <div class="oink">
+ 
+        <img [src]="oink" alt="">
+      <ion-label>Para comenzar, por favor ingresa <b class="strong">tu número celular.</b></ion-label>
+  </div>
+  <div class="divider"></div>
+
+  <div class="input">
+    <p>{{telefono}}</p>
+  </div>
+
+  <div class="keyword">
+    <ion-grid>
+      <ion-row>
+        <ion-col (click)="concatena('1',$event)">
+          <ion-button fill="clear" shape="round" class="boton">
+            1
+          </ion-button>
+        </ion-col>
+        <ion-col (click)="concatena('2' ,$event)"> <ion-button fill="clear" shape="round" class="boton">
+          2
+        </ion-button></ion-col>
+        <ion-col (click)="concatena('3',$event)"> <ion-button fill="clear" shape="round" class="boton">
+          3
+        </ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col (click)="concatena('4',$event)"> <ion-button fill="clear" shape="round" class="boton">
+          4
+        </ion-button></ion-col>
+        <ion-col (click)="concatena('5',$event)"> <ion-button fill="clear" shape="round" class="boton">
+          5
+        </ion-button></ion-col>
+        <ion-col (click)="concatena('6',$event)"> <ion-button fill="clear" shape="round" class="boton">
+          6
+        </ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col (click)="concatena('7',$event)"> <ion-button fill="clear" shape="round" class="boton">
+          7
+        </ion-button></ion-col>
+        <ion-col (click)="concatena('8',$event)"> <ion-button fill="clear" shape="round" class="boton">
+          8
+        </ion-button></ion-col>
+        <ion-col (click)="concatena('9',$event)"> <ion-button fill="clear" shape="round" class="boton">
+          9
+        </ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col (click)="limpiar()">
+          <ion-button size="large" fill="clear" shape="round" class="botonIcon">
+            <img class="clear" [src]="clear" alt="">
+          </ion-button>
+        </ion-col>
+        <ion-col (click)="concatena('0',$event)"> <ion-button fill="clear" shape="round" class="boton">
+          0
+        </ion-button></ion-col>
+        <ion-col>
+          <ion-button (click)="next()" [disabled]="telefono.length !== 11" size="small"  shape="round" class="botonIcon1">
+            <!-- <div (click)="next()" [ngClass]="{ 'check':telefono.length !== 11,'check-color':telefono.length === 11}"><img [src]="check" alt=""></div> -->
+            <img [src]="check" alt="">
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  </div>
+ 
+</ion-content>
+

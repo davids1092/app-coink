@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <div class="tittle">
+        <ion-label color="secondary">NÚMERO CELULAR</ion-label>
+        <img [src]="stepper" alt="">
+      </div>
+   
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+ 
+  <div class="containerScreen">
+    <div class="oink">
+ 
+        <img [src]="oink" alt="">
+        <div class="description">
+          <ion-label class="ion-label" color="secondary">ESTAS MUY CERCA DE SER PARTE DE COINK.</ion-label>
+          <ion-label>Solo es necesario que leas detenidamente el contrato que se encuentra al final de esta pantalla y lo aceptes.</ion-label>
+        </div>
+  </div>
+  <div class="divider"></div>
+<div class="text">
+  <ion-label class="ion-label" color="secondary">LO MÁS IMPORTANTE</ion-label>
+
+    <p>Para la apertura del Depósito de Bajo Monto en COINK debes ser una persona natural que de acuerdo con nuestra legislación vigente te encuentres en plena capacidad para adquirir derechos y contraer obligaciones. Abrirás una cuenta COINK de Bajo Monto la cual te permitirá tener un saldo hasta por 8 salarios mínimos en el mes y realizar débitos por el mismo valor. Si deseas sobrepasar estos límites debes solicitarnos la apertura de un Depósito Ordinario COINK Persona Natural. Solo puedes tener una cuenta COINK de Bajo Monto y podrás utilizar tu dispositivo móvil para consultar tu saldo, tus movimientos, realizar tus transacciones y administrar tu cuenta. Recuerda que no necesitas saldo mínimo ni monto inicial para su apertura.</p>
+
+
+
+</div>
+<div  class="link">
+  <a>Lee tu contrato</a>
+</div>
+
+<ion-checkbox [formControl]="check" labelPlacement="end">He leído ya acepto el contrato</ion-checkbox> 
+<ion-text *ngIf="check.invalid && (check.dirty || check.touched)" color="danger">
+  <p class="error-message">{{getErrorMessage(check)}}</p>
+</ion-text>
+<div class="botonera">
+  <div class="btn">
+    <app-btn-pricnipal [disabled]="check.invalid" (click)="next()">Aceptar </app-btn-pricnipal>
+
+  </div>
+</div>
+  </div>
+ 
+</ion-content>
+

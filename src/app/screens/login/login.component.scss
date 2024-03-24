@@ -1,0 +1,31 @@
+.container-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 40px;
+    .img{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 80%;
+      width: 100%;
+      img{
+        width: 50%;
+      }
+      h2{
+        font-family:  Montserrat-Bold;
+        text-align: center;
+        color: var(--primaryColor);
+      }
+    }
+    .botonera{
+      width: 100%;
+      .btn{
+        margin-bottom: 20px ;
+      }
+    }
+  }
+  

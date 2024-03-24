@@ -1,0 +1,77 @@
+
+.tittle{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    
+}
+.tittle ion-label {
+    font-family: Montserrat-Bold;
+    text-align: center;
+    margin: 10px 0px;
+}
+.containerScreen{
+    width: 80%;
+    margin: 10px auto;
+}
+.oink{
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+.strong{
+    font-family: Montserrat-Bold;
+}
+ion-label{
+    color: var(--labels);
+}
+.oink ion-label{
+    text-align: center;
+}
+.divider{
+    width: 100%;
+    height: 2px;
+    background-color: var(--ion-color-primary)
+}
+.description{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    ion-label{
+        text-align: left !important;
+    }
+}
+.ion-label {
+    font-family: Montserrat-Bold;
+    text-align: center;
+    margin: 10px 0px;
+    
+}
+.text{
+    margin-top: 30px;
+}
+.link a{
+    color: var(--ion-color-secondary);
+    text-decoration: underline;
+    font-family: Montserrat-Bold;
+   
+}
+.link{
+    margin: 20px 0px !important;
+}
+.botonera{
+    width: 100%;
+    margin: 50px auto;
+    .btn{
+      margin-bottom: 20px ;
+    }
+  }
+  .error-message{
+    font-size: 12px;
+    padding-left: 5%;
+}
+

@@ -1,0 +1,11 @@
+<div class="steps">
+  <span 
+      [ngClass]="{'circle': true, 'active': step.id >= i+1}" 
+      *ngFor="let single of steps; let i = index" 
+  >
+      <!-- <mat-icon>done</mat-icon> -->
+  </span>
+  <div class="progress">
+      <span class="indicator" [ngStyle]="{'width': width}"></span>
+  </div>
+</div>
